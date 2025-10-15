@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Conceptos básicos de HTML</title>
+		<style>
+			:root{
+				--bg:#f7f9fc;
+				--card:#ffffff;
+				--accent:#2b6cb0;
+				--muted:#6b7280;
+			}
+			*{box-sizing:border-box}
+			body{
+				font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+				background:var(--bg);
+				color:#111827;
+				padding:2rem;
+				line-height:1.5;
+			}
+			.container{max-width:900px;margin:0 auto}
+			header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+			header h1{font-size:1.6rem}
+			nav a{color:var(--accent);text-decoration:none;margin-left:1rem}
+			.card{background:var(--card);padding:1.25rem;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-bottom:1rem}
+			pre{background:#0f172a;color:#e6eef8;padding:0.75rem;border-radius:6px;overflow:auto}
+			code{background:#eef2ff;padding:0.15rem 0.4rem;border-radius:4px;color:#1e293b}
+			.grid{display:grid;grid-template-columns:1fr 320px;gap:1rem}
+			@media (max-width:880px){.grid{grid-template-columns:1fr}}
+			aside{position:sticky;top:1rem;height:max-content}
+			footer{margin-top:2rem;text-align:center;color:var(--muted);font-size:0.9rem}
+			.example{background:#f1f5f9;border-left:4px solid var(--accent);padding:0.75rem;border-radius:6px}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Conceptos básicos de HTML</h1>
+				<nav><a href="index.html">← Volver</a></nav>
+			</header>
+
+			<div class="grid">
+				<main>
+					<section class="card">
+						<h2>¿Qué es HTML?</h2>
+						<p>
+							HTML (HyperText Markup Language) es el lenguaje de marcado que
+							usamos para estructurar contenido en la web. Las páginas web se
+							componen de elementos (etiquetas) que describen títulos,
+							párrafos, imágenes, enlaces, listas y más.
+						</p>
+					</section>
+
+					<section class="card">
+						<h2>Estructura básica de un documento HTML</h2>
+						<p>Ejemplo mínimo de un archivo HTML:</p>
+						<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8" /&gt;
+		&lt;title&gt;Mi página&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;h1&gt;Hola Mundo&lt;/h1&gt;
+		&lt;p&gt;Mi primer sitio web.&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+						<p class="example">Consejo: guarda el archivo con extensión <code>.html</code> y ábrelo en tu navegador para ver el resultado.</p>
+					</section>
+
+					<section class="card">
+						<h2>Títulos y párrafos</h2>
+						<p>Usa <code>&lt;h1&gt;...&lt;/h1&gt;</code> a <code>&lt;h6&gt;</code> para títulos y <code>&lt;p&gt;</code> para párrafos.</p>
+						<pre><code>&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></pre>
+					</section>
+
+					<section class="card">
+						<h2>Listas</h2>
+						<p>Listas ordenadas y desordenadas:</p>
+						<pre><code>&lt;ul&gt;
+	&lt;li&gt;Elemento 1&lt;/li&gt;
+	&lt;li&gt;Elemento 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+	&lt;li&gt;Primero&lt;/li&gt;
+	&lt;li&gt;Segundo&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+					</section>
+
+					<section class="card">
+						<h2>Enlaces e imágenes</h2>
+						<p>
+							Enlaces con <code>&lt;a href="..."&gt;</code> e imágenes con
+							<code>&lt;img src="..." alt="..."/&gt;</code>.
+						</p>
+						<pre><code>&lt;a href="https://example.com" target="_blank"&gt;Visitar ejemplo&lt;/a&gt;
+
+&lt;img src="imagen.jpg" alt="Descripción de la imagen" width="300"/&gt;</code></pre>
+					</section>
+
+					<section class="card">
+						<h2>Tablas</h2>
+						<p>Tablas simples con encabezado y filas:</p>
+						<pre><code>&lt;table&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;&lt;th&gt;Nombre&lt;/th&gt;&lt;th&gt;Edad&lt;/th&gt;&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;&lt;td&gt;Ana&lt;/td&gt;&lt;td&gt;28&lt;/td&gt;&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+					</section>
+
+					<section class="card">
+						<h2>Formularios</h2>
+						<p>Un ejemplo de formulario simple:</p>
+						<pre><code>&lt;form action="/enviar" method="post"&gt;
+	&lt;label&gt;Nombre:&lt;input type="text" name="nombre" /&gt;&lt;/label&gt;
+	&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+						<p class="example">Nota: para probar envío real necesitas un servidor. Puedes usar <code>mailto:</code> o herramientas locales para simular.</p>
+					</section>
+
+					<section class="card">
+						<h2>Elementos semánticos</h2>
+						<p>HTML5 incluye etiquetas semánticas como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code> y <code>&lt;footer&gt;</code>. Úsalas para mejorar la accesibilidad y SEO.</p>
+					</section>
+
+					<section class="card">
+						<h2>Comentarios</h2>
+						<p>Los comentarios no se muestran en el navegador:</p>
+						<pre><code>&lt;!-- Este es un comentario en HTML --&gt;</code></pre>
+					</section>
+
+					<section class="card">
+						<h2>Recursos útiles</h2>
+						<ul>
+							<li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML (es)</a></li>
+							<li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools - HTML</a></li>
+						</ul>
+					</section>
+				</main>
+
+				<aside>
+					<div class="card">
+						<h3>Atajos</h3>
+						<ul>
+							<li>&lt;!DOCTYPE html&gt; — declara la versión de HTML</li>
+							<li>&lt;meta charset="utf-8"&gt; — codificación recomendada</li>
+							<li>&lt;img alt="..."&gt; — siempre incluir texto alternativo</li>
+						</ul>
+					</div>
+
+					<div class="card">
+						<h3>Mini-ejemplo</h3>
+						<p class="example">Pega esto en un archivo y ábrelo:</p>
+						<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;&lt;meta charset="utf-8"/&gt;&lt;title&gt;Ejemplo&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Hola&lt;/h1&gt;&lt;p&gt;¡Funciona!&lt;/p&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					</div>
+				</aside>
+			</div>
+
+			<footer>
+				<p>Creado como guía rápida para aprender los conceptos básicos de HTML.</p>
+			</footer>
+		</div>
+	</body>
+</html>

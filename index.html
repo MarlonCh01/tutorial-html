@@ -190,6 +190,7 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#características">Características</a></li>
           <li><a href="#contacto">Contacto</a></li>
+          <li><a href="otra.html">Tutorial HTML</a></li>
         </ul>
       </nav>
     </header>
@@ -268,7 +269,8 @@
         const scrolled = window.pageYOffset;
         const hero = document.querySelector(".hero");
         if (hero) {
-          hero.style.transform = translateY(${scrolled * 0.5}px);
+          // usar template string correctamente para generar la unidad 'px'
+          hero.style.transform = `translateY(${scrolled * 0.5}px)`;
         }
       });
     </script>
